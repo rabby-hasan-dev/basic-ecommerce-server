@@ -1,16 +1,14 @@
-import { Request, Response } from "express";
+import express, { Request, Response } from 'express';
+const router = express.Router()
 
-
-//  notFound Route
-const notFoundRouter = (req: Request, res: Response) => {
-
+router.all("/", (req: Request, res: Response) => {
     res.status(400).json({
         "success": false,
         "message": "Route not found"
     })
-}
+})
 
-export const errorhandler = {
-    notFoundRouter,
-}
+export const notFoundRouter = router;
+
+
 

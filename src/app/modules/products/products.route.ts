@@ -1,5 +1,4 @@
 import express from 'express';
-import { errorhandler } from '../../utilis/errorhandler';
 import { productController } from './products.controller';
 const router = express.Router();
 
@@ -9,6 +8,6 @@ router.get('/products/:productId', productController.getProductById);
 router.put('/products/:productId', productController.getProductByIdAndUpdate);
 router.delete('/products/:productId', productController.getProductByIdAndDelete,
 );
-router.all("*", errorhandler.notFoundRouter)
+
 
 export const productRouter = router;
