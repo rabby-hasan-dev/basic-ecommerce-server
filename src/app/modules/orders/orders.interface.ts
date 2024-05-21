@@ -1,11 +1,8 @@
 //  order interface create
 
-
-
 export type Orders = {
-    email: string;
-    productId: string;
-    price: number;
-    quantity: number;
-
-}
+  email: string;
+  productId: string;
+  price: number;
+  quantity: number;
+};
