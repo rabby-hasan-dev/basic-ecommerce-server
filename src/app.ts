@@ -1,7 +1,7 @@
 import cors from 'cors';
-import express, { Request, Response } from 'express';
-const app = express();
-
+import express, { Application, Request, Response } from 'express';
+import { productRouter } from './app/modules/products/products.route';
+const app: Application = express();
 
 //  parser
 app.use(express.json());
@@ -10,15 +10,11 @@ app.use(express.json());
 
 app.use(cors());
 
-
 //  Router
-
-
+app.use('/api/products', productRouter);
 
 app.get('/', (req: Request, res: Response) => {
-
   res.send('Hello World Programmer!');
-
 });
 
 export default app;
