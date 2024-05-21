@@ -1,8 +1,24 @@
-import express from 'express';
+import cors from 'cors';
+import express, { Request, Response } from 'express';
 const app = express();
 
-app.get('/', (req, res) => {
+
+//  parser
+app.use(express.json());
+
+// middleware
+
+app.use(cors());
+
+
+//  Router
+
+
+
+app.get('/', (req: Request, res: Response) => {
+
   res.send('Hello World Programmer!');
+
 });
 
 export default app;
