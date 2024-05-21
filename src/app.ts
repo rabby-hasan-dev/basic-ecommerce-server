@@ -12,6 +12,7 @@ app.use(cors());
 
 //  Router
 app.use('/api/products', productRouter);
+app.use('/api', productRouter);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World Programmer!');
