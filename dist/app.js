@@ -16,8 +16,8 @@ app.use((0, cors_1.default)());
 //  Router
 app.use('/api', products_route_1.productRouter);
 app.use('/api', orders_route_1.orderRouter);
-app.use('*', errorhandler_1.notFoundRouter);
 app.get('/', (req, res) => {
     res.send('Hello World Programmer!');
 });
+app.use('*', errorhandler_1.notFoundRouter);
 exports.default = app;
