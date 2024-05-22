@@ -75,6 +75,8 @@ ProductSchema.statics.isProductExists = async function (id: string) {
   return existingProduct;
 };
 
+
+
 //  create Product Mongoose  model
 
 export const Product = model<Products, ProductsModel>('Product', ProductSchema);
