@@ -27,7 +27,7 @@ const getAllProduct = async (req: Request, res: Response) => {
   try {
     let query = {};
     if (req.query?.searchTerm) {
-      query = { category: req.query?.searchTerm };
+      query = { name: req.query?.searchTerm };
 
       const data = await productService.getAllPrductIntoDB(query);
 

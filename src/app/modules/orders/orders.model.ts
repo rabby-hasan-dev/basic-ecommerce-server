@@ -24,7 +24,5 @@ const OrdersSchema = new Schema<Orders>({
   },
 });
 
-
-
 //  Order mongose model
 export const Order = model<Orders>('Order', OrdersSchema);

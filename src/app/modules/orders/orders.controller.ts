@@ -14,11 +14,17 @@ const createOrder = async (req: Request, res: Response) => {
       data: data,
     });
   } catch (error: any) {
-    res.status(400).json({
-      success: false,
-      message: error.message || ' something went wrong',
-      error: error,
-    });
+    if (error.message === 'Product does not exist!') {
+      res.status(404).json({ success: false, error: error.message });
+    } else if (
+      error.message === 'Insufficient quantity available in inventory'
+    ) {
+      res.status(400).json({ success: false, error: error.message });
+    } else {
+      res
+        .status(500)
+        .json({ success: false, error: 'An unexpected error occurred' });
+    }
   }
 };
 
