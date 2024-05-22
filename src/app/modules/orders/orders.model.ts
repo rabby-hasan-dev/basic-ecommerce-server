@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+import { Aggregate, Schema, model } from 'mongoose';
 import { Orders } from './orders.interface';
 
 const OrdersSchema = new Schema<Orders>({
@@ -22,6 +22,15 @@ const OrdersSchema = new Schema<Orders>({
     required: true,
     trim: true,
   },
+});
+
+//  middleware of oreder schema
+
+OrdersSchema.pre('save', function (next) {
+  console.log(this);
+  Aggregate;
+
+  next();
 });
 
 //  Order mongose model

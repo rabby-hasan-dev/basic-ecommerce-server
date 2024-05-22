@@ -1,5 +1,7 @@
 // Products interface
 
+import { Model } from 'mongoose';
+
 export type Variants = {
   type: string;
   value: string;
@@ -19,3 +21,9 @@ export type Products = {
   variants: Array<Variants>;
   inventory: Inventory;
 };
+
+//  static instance model
+
+export interface ProductsModel extends Model<Products> {
+  isProductExists(id: string): Promise<Products | null>;
+}
